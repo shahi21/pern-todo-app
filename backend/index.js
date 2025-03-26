@@ -77,7 +77,7 @@ app.post("/todos", verifyToken, async (req, res) => {
 app.put("/todos/:id", verifyToken, async (req, res) => {
   const { id } = req.params;
   const { task} = req.body;
-  const result = await pool.query("UPDATE todos SET task = $1, WHERE id = $2 AND user_id = $3 RETURNING *", [task, id, req.user.id]);
+  const result = await pool.query("UPDATE todos SET task = $1 WHERE id = $2 AND user_id = $3 RETURNING *", [task, id, req.user.id]);
   res.json(result.rows[0]);
 });
 
