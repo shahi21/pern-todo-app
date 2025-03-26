@@ -7,6 +7,6 @@ CREATE TABLE users (
 CREATE TABLE todos (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id) ON DELETE CASCADE,
-    task TEXT NOT NULL,
-    completed BOOLEAN DEFAULT false
+    task TEXT NOT NULL
+  
 );
