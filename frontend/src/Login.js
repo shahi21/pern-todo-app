@@ -24,7 +24,7 @@ useEffect(()=>{
       localStorage.setItem("token", data.token);
       navigate("/todos");
     } catch (error) {
-       // Display an alert if login fails
+    
     if (error.response && error.response.data.msg) {
       alert(error.response.data.msg);
     } else {

@@ -38,7 +38,7 @@ function TodoList() {
         { task: newTask },
         { headers: { "x-auth-token": token } }
       );
-      setTodos([...todos, data]); // Update the UI
+      setTodos([...todos, data]);
       setNewTask("");
     } catch (error) {
       console.error("Error adding todo:", error);
